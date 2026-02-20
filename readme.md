@@ -10,6 +10,7 @@ Algorithm Description
 Lamport’s algorithm is a permission-based mutual exclusion algorithm introduced by Leslie Lamport in 1978.
 
 It uses:
+
 Logical Clocks to order events
 Timestamped REQUEST messages
 REPLY messages for permission
@@ -32,11 +33,15 @@ Deterministic ordering of requests
 Object-Oriented implementation
 
 Project Structure
+
 lamport-assignment/
+
 ├── lamport.py     # Contains LamportProcess class
 ├── main.py        # Executes and simulates processes
 └── README.md      # Project documentation
+
 Files Description
+
 1️⃣ lamport.py – Core Algorithm Module
 
 Contains the main class:
@@ -254,5 +259,6 @@ Conclusion
 
 This demonstrates a complete implementation of Lamport’s Distributed Mutual Exclusion Algorithm for distributed database systems.
 The simulation ensures safe and fair access to shared resources using logical clocks and timestamp-based ordering, making it suitable for understanding distributed synchronization mechanisms.
+
 
 
