@@ -92,13 +92,13 @@ Download or clone the project folder.
 
 Navigate to the directory:
 
-cd lamport-assignment
+  cd lamport-assignment
 
 **Usage**
 
 Run the simulation:
 
-python main.py
+   python main.py
 
 The program will simulate multiple distributed processes requesting access to a shared resource.
 
@@ -288,6 +288,7 @@ Every request eventually gets executed.
 
 This demonstrates a complete implementation of Lamport’s Distributed Mutual Exclusion Algorithm for distributed database systems.
 The simulation ensures safe and fair access to shared resources using logical clocks and timestamp-based ordering, making it suitable for understanding distributed synchronization mechanisms.
+
 
 
 
