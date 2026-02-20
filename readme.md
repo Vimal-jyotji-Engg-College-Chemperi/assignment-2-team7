@@ -1,4 +1,5 @@
 Lamport’s Algorithm for Distributed Databases
+
 Overview
 This is a modular implementation of Lamport’s Distributed Mutual Exclusion Algorithm, designed to simulate controlled access to shared resources in distributed database systems.
 The algorithm ensures that only one process can access the critical section at any given time, maintaining data consistency across distributed nodes.
@@ -182,3 +183,4 @@ Conclusion
 
 This demonstrates a complete implementation of Lamport’s Distributed Mutual Exclusion Algorithm for distributed database systems.
 The simulation ensures safe and fair access to shared resources using logical clocks and timestamp-based ordering, making it suitable for understanding distributed synchronization mechanisms.
+
