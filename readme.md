@@ -76,13 +76,14 @@ Responsible for:
 - Displays system behavior
 
 **Installation & Setup**
+
 **Prerequisites**
 
 - Python 3.7 or higher
 
 - No external libraries required
 
-**Installation **
+**Installation**
 
 Download or clone the project folder.
 
@@ -284,6 +285,7 @@ Every request eventually gets executed.
 
 This demonstrates a complete implementation of Lamport’s Distributed Mutual Exclusion Algorithm for distributed database systems.
 The simulation ensures safe and fair access to shared resources using logical clocks and timestamp-based ordering, making it suitable for understanding distributed synchronization mechanisms.
+
 
 
 
