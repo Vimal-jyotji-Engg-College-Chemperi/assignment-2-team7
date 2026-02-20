@@ -14,36 +14,36 @@ It uses:
 
 - Logical Clocks to order events
 
-Timestamped REQUEST messages
+- Timestamped REQUEST messages
 
-REPLY messages for permission
+- REPLY messages for permission
 
-Release notifications
+- Release notifications
 
-Sorted request queues
+- Sorted request queues
 
-Unlike token-based algorithms, Lamport’s algorithm requires permission from all other processes before entering the critical section.
+- Unlike token-based algorithms, Lamport’s algorithm requires permission from all other processes before entering the critical section.
 
-Key Features
+**Key Features**
 
-Fully Distributed (No central coordinator)
+- Fully Distributed (No central coordinator)
 
-Fair access using timestamp ordering
+- Fair access using timestamp ordering
 
-Deadlock-free
+- Deadlock-free
 
-Starvation-free
+- Starvation-free
 
-Deterministic ordering of requests
+- Deterministic ordering of requests
 
-Object-Oriented implementation
+- Object-Oriented implementation
 
-Project Structure
+**Project Structure**
 
 lamport-assignment/
-├── lamport.py     # Contains LamportProcess class
-├── main.py        # Executes and simulates processes
-└── README.md      # Project documentation
+├── lamport.py         # Contains LamportProcess class
+├── main.py            # Executes and simulates processes
+└── README.md          # Project documentation
 
 Files Description
 
@@ -264,6 +264,7 @@ Conclusion
 
 This demonstrates a complete implementation of Lamport’s Distributed Mutual Exclusion Algorithm for distributed database systems.
 The simulation ensures safe and fair access to shared resources using logical clocks and timestamp-based ordering, making it suitable for understanding distributed synchronization mechanisms.
+
 
 
 
