@@ -42,7 +42,9 @@ It uses:
 
 lamport-assignment/
 ├── lamport.py         # Contains LamportProcess class
+
 ├── main.py            # Executes and simulates processes
+
 └── README.md          # Project documentation
 
 **Files Description**
