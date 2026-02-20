@@ -22,7 +22,7 @@ It uses:
 
 - Sorted request queues
 
-- Unlike token-based algorithms, Lamport’s algorithm requires permission from all other processes before entering the critical section.
+ Unlike token-based algorithms, Lamport’s algorithm requires permission from all other processes before entering the critical section.
 
 **Key Features**
 
@@ -45,51 +45,52 @@ lamport-assignment/
 ├── main.py            # Executes and simulates processes
 └── README.md          # Project documentation
 
-Files Description
+**Files Description**
 
-1️⃣ lamport.py – Core Algorithm Module
+**1️⃣ lamport.py – Core Algorithm Module**
 
 Contains the main class:
 
-LamportProcess
+**LamportProcess**
 
 Responsible for:
 
-Maintaining logical clock
+- Maintaining logical clock
 
-Managing request queue
+- Managing request queue
 
-Sending and receiving requests
+- Sending and receiving requests
 
-Handling replies
+- Handling replies
 
-Entering and exiting critical section
+- Entering and exiting critical section
 
-2️⃣ main.py – Execution File
+**2️⃣ main.py – Execution File**
 
-Creates multiple process objects
+- Creates multiple process objects
 
-Simulates distributed nodes using threads
+- Simulates distributed nodes using threads
 
-Starts request-execute-release cycle
+- Starts request-execute-release cycle
 
-Displays system behavior
+- Displays system behavior
 
 **Installation & Setup**
-Prerequisites
+**Prerequisites**
 
-Python 3.7 or higher
+- Python 3.7 or higher
 
-No external libraries required
+- No external libraries required
 
-Installation
+**Installation **
 
 Download or clone the project folder.
 
 Navigate to the directory:
 
 cd lamport-assignment
-Usage
+
+**Usage**
 
 Run the simulation:
 
@@ -97,88 +98,89 @@ python main.py
 
 The program will simulate multiple distributed processes requesting access to a shared resource.
 
-How the Algorithm Works
-1️⃣ Initialization
+**How the Algorithm Works**
 
-Create N processes
+**1️⃣ Initialization**
 
-Each process maintains:
+- Create N processes
 
-Logical clock
+- Each process maintains:
+  
+    Logical clock
 
-Request queue
+    Request queue
 
-Reply counter
+    Reply counter
 
-2️⃣ Requesting Critical Section
+**2️⃣ Requesting Critical Section**
 
 When a process wants to enter:
 
-Increment logical clock
+1.Increment logical clock
 
-Broadcast REQUEST(timestamp, process_id) to all other processes
+2.Broadcast REQUEST(timestamp, process_id) to all other processes
 
-Add its request to local queue
+3.Add its request to local queue
 
-Wait for replies from all processes
+4.Wait for replies from all processes
 
-3️⃣ Receiving a Request
+**3️⃣ Receiving a Request**
 
 Upon receiving a REQUEST:
 
-Update logical clock:
+1.Update logical clock:
 
 clock = max(local_clock, received_timestamp) + 1
 
-Add request to queue
+2.Add request to queue
 
-Send REPLY back
+3.Send REPLY back
 
-4️⃣ Entering Critical Section
+**4️⃣ Entering Critical Section**
 
 A process enters the critical section only if:
 
-It has received replies from all other processes
+- It has received replies from all other processes
 
-Its request has the smallest timestamp in the queue
+- Its request has the smallest timestamp in the queue
 
-5️⃣ Releasing Critical Section
+**5️⃣ Releasing Critical Section**
 
 After execution:
 
-Increment logical clock
+1.Increment logical clock
 
-Remove request from queue
+2.Remove request from queue
 
-Broadcast RELEASE message
+3.Broadcast RELEASE message
 
-Other processes remove its request
+4.Other processes remove its request
 
 Example Execution Flow
 
 Assume 3 processes: P0, P1, P2
 
-P1 requests access (timestamp = 1)
+- P1 requests access (timestamp = 1)
 
-P0 and P2 send replies
+- P0 and P2 send replies
 
-P1 enters critical section
+- P1 enters critical section
 
-After completion, P1 releases
+- After completion, P1 releases
 
-Next process with smallest timestamp enters
+- Next process with smallest timestamp enters
 
 Only one process is in the critical section at any time.
 
-Message Complexity
+**Message Complexity**
 
 For N processes:
 
-REQUEST messages: N − 1
+- REQUEST messages: N − 1
 
-REPLY messages: N − 1
+- REPLY messages: N − 1
 
-RELEASE messages: N − 1
+- RELEASE messages: N − 1
 
 Total messages per critical section entry:
 
@@ -186,84 +188,103 @@ Total messages per critical section entry:
 
 This is higher than token-based algorithms.
 
-API Reference
-Class: LamportProcess
-Constructor
+**API Reference**
+
+**Class: LamportProcess**
+
+**Constructor**
+
 LamportProcess(pid: int, total_processes: int)
 
-Parameters:
+**Parameters:**
 
-pid → Process ID
+- pid → Process ID
 
-total_processes → Total number of processes in the system
+- total_processes → Total number of processes in the system
 
-Methods
-request_critical_section()
+**Methods**
+
+**request_critical_section()**
 
 Sends request to all processes and waits for permission.
 
-receive_request(timestamp, sender_pid)
+**receive_request(timestamp, sender_pid)**
 
 Handles incoming request and sends reply.
 
-enter_critical_section()
+**enter_critical_section()**
 
 Enters critical section if conditions are satisfied.
 
-release_critical_section()
+**release_critical_section()**
 
 Releases resource and notifies all processes.
 
-System Properties
-Mutual Exclusion
+**System Properties**
+
+**Mutual Exclusion**
 
 Only one process accesses shared data at a time.
 
-Fairness
+**Fairness**
 
 Requests are served in timestamp order.
 
-Deadlock-Free
+**Deadlock-Free**
 
 No circular waiting occurs.
 
-Starvation-Free
+**Starvation-Free**
 
 Every request eventually gets executed.
 
-Applications in Distributed Databases
+**Applications in Distributed Databases**
 
-Distributed transaction management
+- Distributed transaction management
 
-Write-lock synchronization
+- Write-lock synchronization
 
-Multi-node database consistency
+- Multi-node database consistency
 
-Distributed file access control
+- Distributed file access control
 
-Advantages
-Fully distributed approach
-Clear event ordering using logical clocks
-Simple and understandable implementation
-No single point of failure
+**Advantages**
 
-Limitations
-High message overhead
-Requires reliable communication
-Not scalable for very large systems
-Failure of one node may block others
+- Fully distributed approach
 
-Future Improvements
-Add fault tolerance
-Add crash recovery mechanism
-Simulate network delays
-Add visualization of request ordering
-Add performance analysis metrics
+- Clear event ordering using logical clocks
 
-Conclusion
+- Simple and understandable implementation
+
+- No single point of failure
+
+**Limitations**
+
+- High message overhead
+
+- Requires reliable communication
+
+- Not scalable for very large systems
+
+- Failure of one node may block others
+
+**Future Improvements**
+
+- Add fault tolerance
+
+- Add crash recovery mechanism
+
+- Simulate network delays
+
+- Add visualization of request ordering
+
+- Add performance analysis metrics
+
+**Conclusion**
 
 This demonstrates a complete implementation of Lamport’s Distributed Mutual Exclusion Algorithm for distributed database systems.
 The simulation ensures safe and fair access to shared resources using logical clocks and timestamp-based ordering, making it suitable for understanding distributed synchronization mechanisms.
+
 
 
 
