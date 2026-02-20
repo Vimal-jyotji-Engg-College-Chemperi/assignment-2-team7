@@ -41,6 +41,7 @@ It uses:
 **Project Structure**
 
 lamport-assignment/
+
 ├── lamport.py         # Contains LamportProcess class
 
 ├── main.py            # Executes and simulates processes
@@ -287,6 +288,7 @@ Every request eventually gets executed.
 
 This demonstrates a complete implementation of Lamport’s Distributed Mutual Exclusion Algorithm for distributed database systems.
 The simulation ensures safe and fair access to shared resources using logical clocks and timestamp-based ordering, making it suitable for understanding distributed synchronization mechanisms.
+
 
 
 
