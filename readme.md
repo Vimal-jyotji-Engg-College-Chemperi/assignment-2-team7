@@ -1,21 +1,27 @@
-Lamport’s Algorithm for Distributed Databases
+**Lamport’s Algorithm for Distributed Databases**
 
-Overview
+**Overview**
 
 This is a modular implementation of Lamport’s Distributed Mutual Exclusion Algorithm, designed to simulate controlled access to shared resources in distributed database systems.
 The algorithm ensures that only one process can access the critical section at any given time, maintaining data consistency across distributed nodes.
 This implementation is built using Python and follows an Object-Oriented Programming (OOP) approach.
 
-Algorithm Description
+**Algorithm Description**
+
 Lamport’s algorithm is a permission-based mutual exclusion algorithm introduced by Leslie Lamport in 1978.
 
 It uses:
 
-Logical Clocks to order events
+- Logical Clocks to order events
+
 Timestamped REQUEST messages
+
 REPLY messages for permission
+
 Release notifications
+
 Sorted request queues
+
 Unlike token-based algorithms, Lamport’s algorithm requires permission from all other processes before entering the critical section.
 
 Key Features
@@ -35,7 +41,6 @@ Object-Oriented implementation
 Project Structure
 
 lamport-assignment/
-
 ├── lamport.py     # Contains LamportProcess class
 ├── main.py        # Executes and simulates processes
 └── README.md      # Project documentation
@@ -70,7 +75,7 @@ Starts request-execute-release cycle
 
 Displays system behavior
 
-Installation & Setup
+**Installation & Setup**
 Prerequisites
 
 Python 3.7 or higher
@@ -259,6 +264,7 @@ Conclusion
 
 This demonstrates a complete implementation of Lamport’s Distributed Mutual Exclusion Algorithm for distributed database systems.
 The simulation ensures safe and fair access to shared resources using logical clocks and timestamp-based ordering, making it suitable for understanding distributed synchronization mechanisms.
+
 
 
 
